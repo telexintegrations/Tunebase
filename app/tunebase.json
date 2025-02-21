@@ -1,0 +1,37 @@
+{
+    "name": "Tunebase",
+    "description": "fetches and delivers trending music from Spotify daily",
+    "type": "interval",
+    "tick_url": "https",
+    "settings": [
+        {
+            "label": "interval",
+            "type": "text",
+            "required": true,
+            "description": "set how often Tunebase fetches trending songs. Use contrab syntax",
+            "default": "0 0 * * *"
+        },
+        {
+            "label": "Number of trennding songs",
+            "description": "set how many trending songs should be fetched daily",
+            "key": "limit",
+            "default": "10",
+            "min": "1",
+            "max": "33"
+        },
+        {
+            "label": "Country",
+            "type": "dropdown",
+            "description": "select country for customized trending music",
+            "options": ["United States", "Kenya", "Nigeria", "Uganda", "Africa", "United Kingdom", "Global"],
+            "default": "Global"
+        },
+        {
+            "label": "preferred genre",
+            "type": "multi-select",
+            "description": "select genres to filter trending music",
+            "options": ["reggae", "jazz", "pop", "rock", "hip-hop", "Afrobeats", "Amapiano", "Electronic", "gospel", "country"],
+            "default": ["afrobeats", "jazz", "pop"]
+        }
+    ]
+}
