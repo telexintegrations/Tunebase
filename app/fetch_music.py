@@ -60,7 +60,7 @@ def get_trending_music(limit=10, country="Global", preferred_genres=["afrobeats"
             "api_key": Config.LASTFM_API_KEY,
             "format": "json"
         }
- ii       
+       
         tags_response = requests.get(tags_url, params=tags_params)
         if tags_response.status_code == 200:
             tags_data = tags_response.json()
