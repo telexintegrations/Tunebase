@@ -35,7 +35,7 @@
 4. **Set up environment variables:**
    - Create a `.env` file in the root directory and add:
      ```ini
-     SPOTIFY_API_KEY=your_spotify_api_key
+     LASTFM_API_KEY=your_lastfm_api_key
      TELEX_API_KEY=your_telex_api_key
      ```
 
@@ -54,7 +54,7 @@ python3 run.py
 
 To fetch trending music, create a test.py file:
 ```ini
-`import requests
+import requests
 from app.fetch_music import get_trending_music
 
 def main():
@@ -63,7 +63,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-`
+
 ```
 
 Run test.py:
@@ -74,7 +74,6 @@ python3 test.py
 
 ## ⚙️ API Reference
 
-### Fetching Trending Music
 
 **Endpoint:**  
 `GET /integration.json`
