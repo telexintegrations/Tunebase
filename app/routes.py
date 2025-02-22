@@ -26,7 +26,7 @@ def get_integration_json():
                 "app_logo": "https://imgur.com/a/xmPqk95",
                 "background_color": "#053C26"
                 },
-            "is_active": False,
+            "is_active": True,
             "integration_category": "Communication & Collaboration",
             "integration_type": "interval",
             "key_features": [
