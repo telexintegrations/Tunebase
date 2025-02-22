@@ -18,16 +18,16 @@ def get_integration_json():
             "date": {
                 "created_at": "2025-02-20",
                 "updated_at": "2025-02-21"
-            },
+                },
             "descriptions": {
                 "app_name": "Tunebase",
                 "app_description": "Fetches and delivers trending songs from Last.fm daily",
                 "app_url": base_url,
                 "app_logo": "https://imgur.com/a/xmPqk95",
                 "background_color": "#053C26"
-            },
+                },
             "is_active": False,
-            "integration_category": "Communiaction & Collaboration",
+            "integration_category": "Communication & Collaboration",
             "integration_type": "interval",
             "key_features": [
                 "fetches trending songs",
@@ -39,10 +39,33 @@ def get_integration_json():
                 {
                     "label": "interval",
                     "type": "text",
-                    "required": True,
+                    "required": true,
+                    "description": "set how often Tunebase fetches trending songs. Use contrab syntax",
                     "default": "0 0 * * *"
-                }
-            ],
+                    },
+                {
+                    "label": "Number of trending songs",
+                    "description": "set how many trending songs should be fetched daily",
+                    "key": "limit",
+                    "default": "10",
+                    "min": "1",
+                    "max": "33"
+                    },
+                {
+                    "label": "Country",
+                    "type": "dropdown",
+                    "description": "select country for customized trending music",
+                    "options": ["United States", "Kenya", "Nigeria", "Uganda", "Africa", "United Kingdom", "Global"],
+                    "default": "Global"
+                    },
+                {
+                    "label": "preferred genre",
+                    "type": "multi-select",
+                    "description": "select genres to filter trending music",
+                    "options": ["reggae", "jazz", "pop", "rock", "hip-hop", "Afrobeats", "Amapiano", "Electronic", "gospel", "country"],
+                    "default": ["afrobeats", "jazz", "pop"]
+                    }
+                ],
             "tick_url": f"{base_url}/tick",
             "target_url": ""
         }
