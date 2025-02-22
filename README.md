@@ -78,14 +78,6 @@ python3 test.py
 **Endpoint:**  
 `GET /integration.json`
 
-**Query Parameters:**
-
-| Parameter   | Type   | Description |
-|------------|--------|-------------|
-| `limit`    | `int`  | Number of songs to fetch (default: 10) |
-| `country`  | `str`  | Country for filtering (default: "Global") |
-| `genres`   | `str`  | Comma-separated list of preferred genres |
-
 ---
 
 ## 📂 Project Structure
