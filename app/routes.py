@@ -39,7 +39,7 @@ def get_integration_json():
                 {
                     "label": "interval",
                     "type": "text",
-                    "required": true,
+                    "required": True,
                     "description": "set how often Tunebase fetches trending songs. Use contrab syntax",
                     "default": "0 0 * * *"
                     },
