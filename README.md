@@ -1,11 +1,11 @@
 # 🎵 Tunebase
 
-**Tunebase** is an integration that fetches trending music from **Spotify API** and allows data transmission to **Telex**.
+**Tunebase** is an integration that fetches trending music from **LASTFM API** and allows data transmission to **Telex**.
 
 ---
 
 ## 🚀 Features
-- Fetches **top trending music** from Spotify.
+- Fetches **top trending music** from Lastfm.
 - Supports **country-based filtering** (Kenya, Nigeria, United States, etc.).
 - Allows **genre selection** (Afrobeats, Jazz, Pop, etc.).
 - Configurable **song limit**.
@@ -17,7 +17,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/tunebase.git
+   git clone https://github.com/telexintegrations/Tunebase.git
    cd tunebase
    ```
 
@@ -77,7 +77,7 @@ python3 test.py
 ### Fetching Trending Music
 
 **Endpoint:**  
-`GET /trending-music`
+`GET /integration.json`
 
 **Query Parameters:**
 
