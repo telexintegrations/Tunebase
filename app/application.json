@@ -1,6 +1,6 @@
 {
     "name": "Tunebase",
-    "description": "fetches and delivers trending music from Spotify daily",
+    "description": "fetches and delivers trending music from Last.FM daily",
     "type": "interval",
     "tick_url": "https",
     "settings": [
@@ -12,7 +12,7 @@
             "default": "0 0 * * *"
         },
         {
-            "label": "Number of trennding songs",
+            "label": "number_of_trending_songs",
             "description": "set how many trending songs should be fetched daily",
             "key": "limit",
             "default": "10",
@@ -20,14 +20,14 @@
             "max": "33"
         },
         {
-            "label": "Country",
+            "label": "country",
             "type": "dropdown",
             "description": "select country for customized trending music",
             "options": ["United States", "Kenya", "Nigeria", "Uganda", "Africa", "United Kingdom", "Global"],
             "default": "Global"
         },
         {
-            "label": "preferred genre",
+            "label": "preferred_genre",
             "type": "multi-select",
             "description": "select genres to filter trending music",
             "options": ["reggae", "jazz", "pop", "rock", "hip-hop", "Afrobeats", "Amapiano", "Electronic", "gospel", "country"],
