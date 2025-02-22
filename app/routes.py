@@ -44,7 +44,7 @@ def get_integration_json():
                     "default": "0 0 * * *"
                     },
                 {
-                    "label": "Number of trending songs",
+                    "label": "number_of_trending_songs",
                     "description": "set how many trending songs should be fetched daily",
                     "key": "limit",
                     "default": "10",
@@ -52,14 +52,14 @@ def get_integration_json():
                     "max": "33"
                     },
                 {
-                    "label": "Country",
+                    "label": "country",
                     "type": "dropdown",
                     "description": "select country for customized trending music",
                     "options": ["United States", "Kenya", "Nigeria", "Uganda", "Africa", "United Kingdom", "Global"],
                     "default": "Global"
                     },
                 {
-                    "label": "preferred genre",
+                    "label": "preferred_genres",
                     "type": "multi-select",
                     "description": "select genres to filter trending music",
                     "options": ["reggae", "jazz", "pop", "rock", "hip-hop", "Afrobeats", "Amapiano", "Electronic", "gospel", "country"],
@@ -78,13 +78,19 @@ def tick():
     sends data to Telex
     """
     try:
-        music_data = get_trending_music()
+        payload = request.get_json()
+        settings = payload.get("settings", [])
+        number_of_trending_songs = next((s["default"] for s in settings if s["label"] == "number_of_trending_songs"), None)
+        country = next((s["default"] for s in settings if s["label"] == "country"), None)
+        preferred_genres = next((s["default"] for s in settings if s["label"] == "preferred_genres"), None)
+
+        music_data = get_trending_music(limit=int(number_of_trending_songs), country=country, preferred_genres=preferred_genres)
         if not music_data:
             return jsonify({"error": "Failed to fetch music"}), 500
 
         # send data to Telex channel
         response_status = send_to_telex(music_data)
         return jsonify ({"status": "accepted", "telex_response": response_status}), 202
-
+        
     except Exception as e:
         return jsonify ({"error": str(e)}), 500
