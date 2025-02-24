@@ -23,7 +23,7 @@ def get_integration_json():
                 "app_name": "Tunebase",
                 "app_description": "Fetches and delivers trending songs from Last.fm daily",
                 "app_url": base_url,
-                "app_logo": "https://tunebase.onrender.com.app/static/Tunebase_logo.png",
+                "app_logo": "https://raw.githubusercontent.com/telexintegrations/Tunebase/refs/heads/master/app/static/Tunebase_logo.png",
                 "background_color": "#053C26"
                 },
             "is_active": True,
