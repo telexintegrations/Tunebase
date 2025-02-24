@@ -2,7 +2,6 @@ from flask import Blueprint, jsonify, request
 from app.fetch_music import get_trending_music
 from app.utils import send_to_telex
 from datetime import datetime
-from app.static import Tunebase_logo
 
 
 routes = Blueprint("routes", __name__)
