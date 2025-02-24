@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from app.fetch_music import get_trending_music
 from app.utils import send_to_telex
 from datetime import datetime
+from app.static import Tunebase_logo
 
 
 routes = Blueprint("routes", __name__)
@@ -23,7 +24,7 @@ def get_integration_json():
                 "app_name": "Tunebase",
                 "app_description": "Fetches and delivers trending songs from Last.fm daily",
                 "app_url": base_url,
-                "app_logo": "https://imgur.com/a/xmPqk95",
+                "app_logo": "https://tunebase.onrender.com.app/static/Tunebase_logo.png",
                 "background_color": "#053C26"
                 },
             "is_active": True,
